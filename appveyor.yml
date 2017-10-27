@@ -24,7 +24,9 @@ install:
   # bzip2 
   - cmd: curl http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz -o bzip2.tar.gz
   - cmd: 7z x bzip2.tar.gz
+  - cmd: dir
   - cmd: 7z x bzip2.tar
+  - cmd: dir
   - call cd bzip2 && nmake /f Makefile.msc
 
   # boost

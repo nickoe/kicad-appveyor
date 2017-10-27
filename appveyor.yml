@@ -40,7 +40,6 @@ artifacts:
     #zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h    
   - path: zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h
     name: files
-    cmd: cd zlib
 
   - path: bzip2-%BZIP2_VER%
     #**/libbz2.lib,**/bzlib.h

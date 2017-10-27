@@ -4,3 +4,11 @@ image: Visual Studio 2015
 # scripts that are called at very beginning, before repo cloning
 init:
   - git config --global core.autocrlf input
+
+install:
+  - ps: $env:COMMIT_TIMESTAMP = git log -1 --pretty=format:%ct
+  - cmd: cd C:\ && git clone -b refs/tags/v1.2.8 https://github.com/madler/zlib.git
+
+  - call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
+  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
+  - call cd C:\zlib &&  nmake /f win32\Makefile.msc

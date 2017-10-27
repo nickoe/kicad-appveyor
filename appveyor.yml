@@ -2,6 +2,13 @@
 image: Visual Studio 2015
 
 # scripts that are called at very beginning, before repo cloning
+version: '{build}'
+
+# Disble stupid msbuild error thing
+build_script:
+  - cmd: echo 0
+
+
 init:
   - git config --global core.autocrlf input
 

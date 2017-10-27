@@ -23,10 +23,10 @@ install:
 
   # bzip2 
   - echo Working bzip2
-  - set BZIP2_VER=1.0.6
-  - curl http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz -o bzip2-%BZIP2_VER%.tar.gz
-  - 7z x bzip2-%BZIP2_VER%.tar.gz
-  - 7z x bzip2-%BZIP2_VER%.tar
+  - cmd: set BZIP2_VER=1.0.6
+  - cmd: curl http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz -o bzip2-%BZIP2_VER%.tar.gz
+  - cmd: 7z x bzip2-%BZIP2_VER%.tar.gz
+  - cmd: 7z x bzip2-%BZIP2_VER%.tar
   - call cd bzip2 && nmake /f Makefile.msc
 
   # boost

@@ -24,6 +24,7 @@ install:
   # bzip2 
   - echo Working bzip2
   - cmd: set BZIP2_VER=1.0.6
+  - cmd: echo %BZIP2_VER%
   - cmd: curl http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz -o bzip2-%BZIP2_VER%.tar.gz
   - cmd: 7z x bzip2-%BZIP2_VER%.tar.gz
   - cmd: 7z x bzip2-%BZIP2_VER%.tar

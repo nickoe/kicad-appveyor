@@ -14,7 +14,8 @@ install:
   - call cd C:\zlib &&  nmake /f win32\Makefile.msc
 
 artifacts:
-  - dir C:\zlib
+  - path C:\zlib
+    #zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h    
 
 on_failure:
   - dir C:\zlib

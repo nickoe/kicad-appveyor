@@ -16,13 +16,24 @@ install:
   - ps: $env:COMMIT_TIMESTAMP = git log -1 --pretty=format:%ct
   - call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
-  
+ 
+  # zlib
   - cmd: git clone -b v1.2.8 https://github.com/madler/zlib.git
-  - call cd zlib &&  nmake /f win32\Makefile.msc
+  - call cd zlib && nmake /f win32\Makefile.msc
+
+  # bzip2 
+  - cmd: curl http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz -o bzip2.tar.gz
+  - cmd: 7z x bzip2.tar.gz
+  - cmd: 7z x bzip2.tar
+  - call cd bzip2 && nmake /f Makefile.msc
+
+  # boost
+  - cmd: git clone -b boost-1.60.0 https://github.com/boostorg/boost.git
+
 
 artifacts:
   - path: zlib
     #zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h    
 
 on_failure:
-  - dir C:\zlib
+  - dir .

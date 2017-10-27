@@ -22,9 +22,7 @@ install:
 
 artifacts:
   - path: zlib
-    name: Zlib
     #zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h    
-    #swer
 
 on_failure:
   - dir C:\zlib

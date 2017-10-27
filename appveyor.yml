@@ -19,7 +19,7 @@ install:
  
   # zlib
   - cmd: git clone -b v1.2.8 https://github.com/madler/zlib.git
-  - call cd zlib && nmake /f win32\Makefile.msc
+  - call cd zlib && nmake /f win32\Makefile.msc && cd ..
 
   # bzip2 
   - echo Working bzip2
@@ -37,6 +37,8 @@ install:
 artifacts:
   - path: zlib
     #zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h    
+  - path: bzip2-%BZIP2_VER%
+    #**/libbz2.lib,**/bzlib.h
 
 on_failure:
   - dir .

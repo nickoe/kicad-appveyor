@@ -6,7 +6,7 @@ version: '{build}'
 
 # Disble stupid msbuild error thing
 build_script:
-
+  - cmd: echo %CD%
 
 init:
   - git config --global core.autocrlf input
@@ -14,9 +14,8 @@ init:
 
 install:
   - ps: $env:COMMIT_TIMESTAMP = git log -1 --pretty=format:%ct
-  - call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
-  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
 
+  - call env_setup.bat
   - call build_bzip2.bat
   - cmd: dir .
   - call build_zlib.bat

@@ -17,9 +17,8 @@ install:
 
   - call env_setup.bat
   - call build_bzip2.bat
-  - cmd: dir .
   - call build_zlib.bat
-
+  #- call build_boost.bat
 
 artifacts:
   - path: zlib

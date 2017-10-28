@@ -35,4 +35,7 @@ artifacts:
 on_failure:
   - dir .
 
+cache:
+  #  - cache
+
 test: off  # to avoid discovering tests

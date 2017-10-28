@@ -5,10 +5,10 @@ call cd zlib && nmake /f win32\Makefile.msc
 call dir .
 ::call cp zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h cache/
 ::call xcopy /I zlib.lib zlib1.dll zlib1.pdb zdll.lib zlib.h zconf.h cache
-cd %WORKSPACE
-mkdir cache/zlib
+mkdir %WORKSPACE%/cache/zlib
 for %%i in (zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h) do (
   echo %%i
-  xcopy %%i cache/zlib /I
+  xcopy %%i %WORKSPACE%/cache/zlib /I
 )
-dir cache/zlib
+dir %WORKSPACE%/cache/zlib
+cd %WORKSPACE%

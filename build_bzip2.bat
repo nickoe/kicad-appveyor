@@ -9,5 +9,12 @@ curl http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz -o bzip2-%BZIP2_VE
 7z x bzip2-%BZIP2_VER%.tar
 call cd bzip2-%BZIP2_VER% && nmake /f Makefile.msc
 ::**/libbz2.lib,**/bzlib.hcd ...
+cd %WORKSPACE
+mkdir cache/bzip2
+for %%i in (**/libbz2.lib,**/bzlib.hcd) do (
+  echo %%i
+  xcopy %%i cache/bzip2 /I
+)
+dir cache/bzip2
 cd %WORKSPACE%
 

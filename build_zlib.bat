@@ -8,7 +8,7 @@ call dir .
 mkdir cache
 for %%i in (zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h) do (
   echo %%i
-  xcopy %%i cache /L /I /S /E
+  xcopy %%i cache /I
 )
 dir cache
 cd %WORKSPACE%

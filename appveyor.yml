@@ -17,7 +17,9 @@ build_script:
   - ps: $env:COMMIT_TIMESTAMP = git log -1 --pretty=format:%ct
 
   - call env_setup.bat
+  - cmd: echo BZIP2
   - call build_bzip2.bat
+  - cmd: echo ZLIB
   - call build_zlib.bat
   #- call build_boost.bat
 

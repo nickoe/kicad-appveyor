@@ -6,7 +6,6 @@ version: '{build}'
 
 # Disble stupid msbuild error thing
 build_script:
-  - cmd: echo 0
 
 
 init:

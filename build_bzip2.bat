@@ -4,6 +4,7 @@ call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_
 :: bzip2 
 set BZIP2_VER=1.0.6
 echo %BZIP2_VER%
+dir .
 curl http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz -o bzip2-%BZIP2_VER%.tar.gz
 7z x bzip2-%BZIP2_VER%.tar.gz
 7z x bzip2-%BZIP2_VER%.tar

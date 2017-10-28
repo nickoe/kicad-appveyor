@@ -6,3 +6,5 @@ call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_
 git clone -b v1.2.8 https://github.com/madler/zlib.git
 call cd zlib && nmake /f win32\Makefile.msc && cd ..
 call cp zlib.lib,zlib1.dll,zlib1.pdb,zdll.lib,zlib.h,zconf.h cache/
+
+cd %WORKSPACE%

@@ -5,14 +5,15 @@ image: Visual Studio 2015
 version: '{build}'
 
 # Disble stupid msbuild error thing
-build_script:
-  - cmd: echo %CD%
+#build_script:
+#  - cmd: echo %CD%
 
 init:
   - git config --global core.autocrlf input
   - set WORKSPACE=%CD%
 
-install:
+    #install:
+build_script:
   - ps: $env:COMMIT_TIMESTAMP = git log -1 --pretty=format:%ct
 
   - call env_setup.bat

@@ -6,8 +6,8 @@ set BZIP2_VER=1.0.6
 echo %BZIP2_VER%
 dir .
 curl http://www.bzip.org/%BZIP2_VER%/bzip2-%BZIP2_VER%.tar.gz -o bzip2-%BZIP2_VER%.tar.gz
-7z x -aoa bzip2-%BZIP2_VER%.tar.gz
-7z x -aoa bzip2-%BZIP2_VER%.tar
+7z x -y bzip2-%BZIP2_VER%.tar.gz
+7z x -y bzip2-%BZIP2_VER%.tar
 call cd bzip2-%BZIP2_VER% && nmake /f Makefile.msc
 ::**/libbz2.lib,**/bzlib.hcd ...
 mkdir %WORKSPACE%/cache/bzip2
